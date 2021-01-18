@@ -4,11 +4,10 @@
 <div class="content-header">
     <style>
             html, body {
-                background-color: #fff;
-                color: #000000;
+                background: black;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 600;
-                font-color: #ffffff;
+                color: black;
                 height: 100vh;
                 margin: 0;
                 background-image: url("../image/fsktm-blok.jpg");

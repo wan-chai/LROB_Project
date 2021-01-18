@@ -9,9 +9,9 @@
 <section class="content">
     <div class="panel panel-info">
         <div class="panel-heading"><h2>Report</h2>
-          <!--
-          <a href="/addProject"><button type="button" class="btn btn-info pull-right">Add New Room</button></a>
--->
+
+
+
         </div>
         <div class="panel-body">
             <div class="row form-group">
@@ -32,26 +32,27 @@
                   </form>
                   </div>
                   <table id="senarai" class="table table-hover table-striped table-border">
+                    <caption>List Booking</caption>
                     <thead>
                         @if(count($data)>0)
                         <tr>
-                            <th>No.</th>
-                            <th>Room Id</th>
-                            <th>Date Booking</th>
-                            <th>Start Time</th>
-                            <th>End Time</th>
-                            <th>Status</th>
-                            <th>Name</th>
+                            <th scope="col">No.</th>
+                            <th scope="col">Room Id</th>
+                            <th scope="col">Date Booking</th>
+                            <th scope="col">Start Time</th>
+                            <th scope="col">End Time</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Name</th>
                         </tr>
                         @else
                         <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
                         </tr>
                         @endif
                     </thead>

@@ -23,26 +23,27 @@
                   </div>
               </form>
               <table id="senarai" class="table table-hover table-striped">
+                <caption>List User</caption>
                 <thead>
                     @if(count($data)>0)
                     <tr>
-                        <th>No.</th>
-                        <th>Name</th>
-                        <th>User ID</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Department</th>
-                        <th></th>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">User ID</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Department</th>
+                        <th scope="col"></th>
                     </tr>
                     @else
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
                     @endif
                 </thead>

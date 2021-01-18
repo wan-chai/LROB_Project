@@ -26,20 +26,21 @@
                   </form>
                   </div>
                   <table id="senarai" class="table table-hover table-striped table-border">
+                    <caption>Room List</caption>
                     <thead>
                         @if(count($data)>0)
                         <tr>
-                            <th>No.</th>
-                            <th>Room</th>
-                            <th>Status</th>
-                            <th></th>
+                            <th scope="col">No.</th>
+                            <th scope="col">Room</th>
+                            <th scope="col">Status</th>
+                            <th scope="col"></th>
                         </tr>
                         @else
                         <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
                         </tr>
                         @endif
                     </thead>
