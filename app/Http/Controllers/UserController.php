@@ -58,7 +58,25 @@ class UserController extends Controller
 		$deptname = Department::where('id','=',$dept)->first();
 		$search = "$r->keyword";
 
-		$data=DB::select(DB::raw("
+		if($role == 1)
+		{
+			$data=DB::select(DB::raw("
+			SELECT u.id, u.name, u.userid, u.email, d.department_short AS department_name, r.role_name AS role 
+			FROM users u
+			LEFT JOIN department d 
+			ON u.department_id=d.id
+			LEFT JOIN role r 
+			ON u.role=r.id
+			WHERE (u.name LIKE '%$search%' 
+			OR u.userid LIKE '%$search%' 
+			OR d.department_name LIKE '%$search%' 
+			OR r.role_name LIKE '%$search%')
+			AND u.status = 1;"));
+		}
+
+		elseif($role == 2)
+		{
+			$data=DB::select(DB::raw("
 			SELECT u.id, u.name, u.userid, u.email, d.department_short AS department_name, r.role_name AS role 
 			FROM users u
 			LEFT JOIN department d 
@@ -70,8 +88,10 @@ class UserController extends Controller
 			OR d.department_name LIKE '%$search%' 
 			OR r.role_name LIKE '%$search%')
 			AND u.status = 1 AND u.department_id = $dept;"));
+		}
+		
 
-		return view('user.index', compact('data', 'deptname'));	
+		return view('user.index', compact('data', 'deptname', 'role'));	
 	}
 
 	public function addUser()

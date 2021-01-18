@@ -83,7 +83,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    eFYP
+                    Lecture Room Online Booking
                 </div>
 
             </div>

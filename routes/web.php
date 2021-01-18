@@ -15,62 +15,34 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::post('/login', 'Auth\LoginController@loginNameOrEmail');
 
-	
+Route::get('/registerLink', 'RegisterController2@registerLink')->name('registerLink');
+Route::get('/cancelRegLink', 'RegisterController2@cancelRegLink')->name('cancelRegLink');
+Route::POST('/register2', 'RegisterController2@register')->name('register2');
 
 
 Auth::routes();
 
-// Project
-Route::get('/home', 'ProjectController@index')->name('home');
-Route::get('/project', 'ProjectController@index')->name('project');
-Route::get('/addProject', 'ProjectController@addProject')->name('addProject');
-Route::get('/addSupervisor', 'ProjectController@addSV')->name('addSV');
-Route::post('/saveNewProject', 'ProjectController@saveNewProject')->name('saveNewProject');
-Route::post('/saveUpdateProject', 'ProjectController@saveUpdateProject')->name('saveUpdateProject');
-Route::get('/viewProject/{id}', 'ProjectController@viewProject')->name('viewProject');
-Route::get('/editProject/{id}', 'ProjectController@editProject')->name('editProject');
-Route::get('/deleteProject/{id}', 'ProjectController@deleteProject')->name('deleteProject');
-Route::get('/login/logout', 'ProjectController@logout')->name('logout');
-Route::post('/searchProject', 'ProjectController@searchProject')->name('searchProject');
+//RoomController
+Route::get('/home', 'ViewRoomController@viewRoom')->name('home');
+Route::get('/room', 'ViewRoomController@viewRoom')->name('room');
 
-// Admin
-Route::get('/user', 'UserController@index')->name('user');
-Route::get('/addUser', 'UserController@addUser')->name('addUser');
-Route::get('/editUser/{id}', 'UserController@editUser')->name('editUser');
-Route::get('/viewUser/{id}', 'UserController@viewUser')->name('viewUser');
-Route::get('/deleteUser/{id}', 'UserController@deleteUser')->name('deleteUser');
-Route::post('/saveNewUser', 'UserController@saveNewUser')->name('saveNewUser');
-Route::post('/saveUpdateUser', 'UserController@saveUpdateUser')->name('saveUpdateUser');
-Route::post('/searchUser', 'UserController@searchUser')->name('searchUser');
+//RoomBookingController
+Route::get('/bookingForm/{id}', 'RoomBookingController@bookingForm')->name('bookingForm');
+Route::POST('/saveBooking', 'RoomBookingController@saveBooking')->name('saveBooking');
+Route::get('/listBooking', 'RoomBookingController@listBooking')->name('listBooking');
+Route::get('/cancelBooking/{id}', 'RoomBookingController@cancelBooking')->name('cancelBooking');
 
-// Grading
-Route::get('/grading', 'GradingController@index')->name('grading');
-Route::get('/editGrading/{id}', 'GradingController@editGrading')->name('editGrading');
-// Route::get('/viewGrading/{id}', 'GradingController@viewGrading')->name('viewGrading');
-Route::get('/viewGrading/{id}', 'GradingController@viewGrading')->name('viewGrading');
-Route::get('/testGrade', 'GradingController@viewGrading')->name('viewGrading');
-Route::post('/searchGrading', 'GradingController@searchGrading')->name('searchGrading');
-
-//Repository
-Route::get('/repository', 'RepositoryController@index')->name('repository');
-Route::post('/searchRepository', 'RepositoryController@searchRepository')->name('searchRepository');
-Route::get('/viewRepository', 'RepositoryController@viewRepository')->name('viewRepository');
-
-// Reporting
-Route::get('/reporting', 'ReportingController@index')->name('reporting');
+// Report
+Route::get('/viewReport', 'ViewreportController@viewReport')->name('viewReport');
+Route::POST('/searchReport', 'ViewreportController@viewReport')->name('searchReport');
 
 
 //testing
 Route::get('/testing', 'Test@index')->name('testing');
 
-Route::get('/test1', function () {
-    return view('grading.testGrade');
-});
-
-Route::get('/test2', function () {
-    return view('grading.updateGrading1');
-});
+Route::get('/login/logout', 'RoomBookingController@logout')->name('logout');
 
 //bcrypt
 Route::get('/test', function () {

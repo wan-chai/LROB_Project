@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>eFYP</title>
+        <title>LROB</title>
 
         <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css" />
         <!-- <link rel="stylesheet" type="text/css" href="D:\Project\fyp\public\bootstrap\css" /> -->

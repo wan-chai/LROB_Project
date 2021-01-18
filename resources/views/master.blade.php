@@ -8,7 +8,7 @@ $user = \Auth::user();
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>eFYP</title>
+  <title>LROB</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
@@ -80,9 +80,9 @@ $user = \Auth::user();
         <!-- Logo -->
         <a href="#" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>eFYP</b></span>
+          <span class="logo-mini"><b>lrob</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>eFYP</b></span>
+          <span class="logo-lg"><b>LROB</b></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -129,45 +129,38 @@ $user = \Auth::user();
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
           <ul class="sidebar-menu">
-            <li class="header">HOME</li>
+            <li class="header">
+              <a href="/home">
+                <i class="fa fa-home"></i>
+                <span>HOME</span>
+              </a>
+            </li>
+            <li class="treeview">
+              <a href="/room">
+                <i class="fa fa-pie-chart"></i>
+                <span>Room</span>
+              </a>
+            </li>
+            <li class="treeview">
+              <a href="/listBooking">
+                <i class="fa fa-pie-chart"></i>
+                <span>Booking</span>
+              </a>
+            </li>
+            @if ($user->role ==1)
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-pie-chart"></i>
-                <span>Repository</span>
+                <span>Management</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/repository"><i class="fa fa-circle-o"></i>Overview</a></li>
-              </ul>
-            </li>
-            @if ($user->role !=1)
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-pie-chart"></i>
-                <span>Projects Management</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="/home"><i class="fa fa-circle-o"></i>Project</a></li>
-                @if ($user->role !=4)
-                <li><a href="/grading"><i class="fa fa-circle-o"></i>Grading</a></li>
-                <li><a href="/reporting"><i class="fa fa-circle-o"></i>Report</a></li>
-              </ul>
-            </li>
-            @endif
-            @endif
-            @if ($user->role !=4)
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Administration</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
+                <li><a href="/viewReport"><i class="fa fa-circle-o"></i>Report</a></li>
                 <li><a href="/user"><i class="fa fa-circle-o"></i>User</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Room Maintenance</a></li>
               </ul>
             </li>
             @endif
-
-
         </ul>
       </section>
       <!-- /.sidebar -->
@@ -179,15 +172,6 @@ $user = \Auth::user();
       <br>
       <br>
     </div><!-- /.content-wrapper -->
-    
-
-   <!--  <footer class="main-footer">
-      <div class="pull-right hidden-xs">
-        <b>Versi</b> 2.0
-      </div>
-      <strong>Hak Cipta Terpelihara &copy; Bahagian Pengurusan Sumber Manusia </strong> 
-    </footer> -->
-
 
       <!-- Add the sidebar's background. This div must be placed
       immediately after the control sidebar -->
